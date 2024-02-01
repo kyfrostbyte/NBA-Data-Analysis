@@ -1,0 +1,11 @@
+
+{
+    "BASE_URL"   : "http://api.sportsdata.io/v3",
+    "NBA_API_KEY": "51536294c400471ca1d2c6a67248662a",
+    "NFL_API_KEY": "e45c713d7b0a42c9b6dd28c25525b9bb",
+    "CBB_API_KEY": "12e59c0e076d432b92eeb0f5de831dc5",
+    "NBA_SCORES_ENDPOINT":"/nba/stats/json/BoxScores/2024-01-30?key=51536294c400471ca1d2c6a67248662a",
+    "NFL_SCORES_ENDPOINT": "/nfl/scores/json/ScoresByDate/2024-01-28?key=e45c713d7b0a42c9b6dd28c25525b9bb",
+    "CBB_SCORES_ENDPOINT"  :"/cbb/scores/json/ScoresBasic/2024-01-30?key=12e59c0e076d432b92eeb0f5de831dc5",
+    "NBA_STANDINGS_ENDPOINT" : "/nba/scores/json/Standings/2024?key=51536294c400471ca1d2c6a67248662a"
+}

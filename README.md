@@ -15,7 +15,8 @@
 {List the questions and the answers you found by doing this analysis.}
 
 # Development Environment
-
+- imported: tabulate
+- 
 {Describe the tools that you used to develop the software}
 
 {Describe the programming language that you used and any libraries.}
@@ -32,3 +33,19 @@
 * Item 1
 * Item 2
 * Item 3
+
+
+
+Finished things:
+
+Requests, formats and displays the current NBA Standings
+nba_standings = NBA_api.format_nba_standings(NBA_api.make_request(NBA_STANDINGS_ENDPOINT))
+NBA_api.display_nba_standings(nba_standings)
+
+
+Create instance of CSVReader, read and print data
+csv_reader = CSVReader(NBA_SALARIES_CSV_PATH)
+csv_reader.read_csv()
+data = csv_reader.get_data()
+for x in data:
+    print(x)
