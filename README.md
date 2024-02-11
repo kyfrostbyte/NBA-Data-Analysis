@@ -16,7 +16,8 @@
 
 # Development Environment
 - imported: tabulate
-- 
+- pip install pandas matplotlib seaborn
+- mpld3
 {Describe the tools that you used to develop the software}
 
 {Describe the programming language that you used and any libraries.}
@@ -49,3 +50,27 @@ csv_reader.read_csv()
 data = csv_reader.get_data()
 for x in data:
     print(x)
+
+
+ # Modifying data (for example, adding a new game)
+    new_game = {"Date": "2024-02-10", "TeamA": "Team1", "TeamB": "Team2", "Result": "Team1 Wins"}
+    games.append(new_game)
+
+    # Writing back to CSV
+    csv_reader.write_csv(NBA_GAMES_CSV_PATH, games)
+
+
+  Create instances of each API league-specific object
+    NBA_api = NBA_API(NBA_API_KEY, BASE_URL)
+    NFL_api = NFL_API(NFL_API_KEY, BASE_URL)
+    CBB_api = CBB_API(CBB_API_KEY, BASE_URL)
+    NBA_api2 = NBA_API2(NBA_API2_KEY, BASE_URL_2)
+
+    player_data = NBA_api2.players(1, 2023)
+    team = NBA_api2.teams_by_id()
+
+    print("")
+
+    nba_standings = NBA_api.format_nba_standings(NBA_api.make_request(NBA_STANDINGS_ENDPOINT))
+    NBA_api.display_nba_standings(nba_standings)
+
