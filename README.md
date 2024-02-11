@@ -74,3 +74,7 @@ for x in data:
     nba_standings = NBA_api.format_nba_standings(NBA_api.make_request(NBA_STANDINGS_ENDPOINT))
     NBA_api.display_nba_standings(nba_standings)
 
+
+
+# Rank players by consistency
+    ranked_players = analyzer.rank_players_by_consistency()

@@ -29,7 +29,6 @@ class NBA_API2:
             print(f"Request error: {e}")
             return None
 
-
     def teams_by_id(self):
         import requests
 

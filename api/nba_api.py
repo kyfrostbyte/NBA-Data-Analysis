@@ -2,8 +2,8 @@ import requests
 from datetime import datetime
 from tabulate import tabulate
 
-
 class NBA_API:
+
 
     def __init__(self, api_key, base_url):
         self.api_key = api_key
@@ -134,4 +134,3 @@ class NBA_API:
     def display_nba_player_stats(self, data):
         for player in data:
             print(player["Name"], player["Points"])
-

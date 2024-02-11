@@ -19,9 +19,7 @@ NBA_STANDINGS_ENDPOINT = f"/nba/scores/json/Standings/2024?key={NBA_API_KEY}"
 NBA_PLAYER_SEASON_STATS_ENDPOINT = f"/nba/stats/json/PlayerSeasonStats/2023?key={NBA_API_KEY}"
 
 # RapidAPI ENDPOINTS
-
 NBA_IDS = [1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 14, 15, 16, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 38, 40, 41]
-
 NBA_PLAYERS_ENDPOINT = "players"
 
 # NBA FILE PATHS
@@ -37,23 +35,27 @@ CBB_SCORES_ENDPOINT = f"/cbb/scores/json/ScoresBasic/2024-01-30?key={CBB_API_KEY
 # NFL ENDPOINTS
 NFL_SCORES_ENDPOINT = f"/nfl/scores/json/ScoresByDate/2024-01-28?key={NFL_API_KEY}"
 
-
 # CSV FORMATS DEFINITIONS
 # games.csv
 GAMES_DATA_TYPES = {
-    'TEAM_ID': int,
-    'LEAGUE_ID': int,
-    'SEASON_ID': int,
-    'STANDINGSDATE': 'datetime64',
+    'GAME_DATE_EST': 'datetime64',
+    'GAME_ID': int,
+    'GAME_STATUS_TEXT': str,
+    'HOME_TEAM_ID': int,
+    'VISITOR_TEAM_ID': int,
+    'SEASON': int,
     'CONFERENCE': str,
-    'TEAM': str,
-    'G': int,
-    'W': int,
-    'L': int,
-    'W_PCT': float,
-    'HOME_RECORD': str,
-    'ROAD_RECORD': str,
-    'RETURNTOPLAY': str,
+    'TEAM_ID_home': int,
+    'AST_home': int,
+    'REB_home': int,
+    'TEAM_ID_away': int,
+    'PTS_away': int,
+    'FG_PCT_away': float,
+    'FT_PCT_away': float,
+    'FG3_PCT_away': float,
+    'AST_away': int,
+    'REB_away': int,
+    'HOME_TEAM_WINS': int
 }
 
 # game_details.csv
