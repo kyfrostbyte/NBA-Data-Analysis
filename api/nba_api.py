@@ -2,8 +2,8 @@ import requests
 from datetime import datetime
 from tabulate import tabulate
 
-class NBA_API:
 
+class NBA_API:
 
     def __init__(self, api_key, base_url):
         self.api_key = api_key
@@ -85,8 +85,8 @@ class NBA_API:
             western_wins = f"{western_team.get('Wins', ''):<10}"
             western_losses = f"{western_team.get('Losses', ''):<10}"
 
-
-            print(f"{eastern_team_name} {eastern_wins} {eastern_losses} | {western_team_name} {western_wins} {western_losses}")
+            print(
+                f"{eastern_team_name} {eastern_wins} {eastern_losses} | {western_team_name} {western_wins} {western_losses}")
 
     def format_game_data(self, data):
         formatted_games = []
@@ -129,7 +129,6 @@ class NBA_API:
                     print("Home Team:", game["HomeTeam"], "Score:", game["HomeScore"])
                     print("Away Team:", game["AwayTeam"], "Score:", game["AwayScore"])
                     print("-" * 30)
-
 
     def display_nba_player_stats(self, data):
         for player in data:

@@ -1,80 +1,68 @@
 # Overview
+This is a program that analyses NBA data in a few different ways. The data comes from either an API or CSV, depending on the users input. Between the two data sources, there is a 
+pretty vast amount of data. Just one of the CSV files alone as over 26 thousand rows. My purpose for choosing the data set was to see what information could be gleaned from
+an activity that is incredibly inconsistent at times. With basketball nothing is certain. Any shot could be made or missed, so I was interested to see how things have changed over time 
+in spite of that. I also wanted to see what niche statistics I could come up with
 
-{Important!  Do not say in this section that this is college assignment.  Talk about what you are trying to accomplish as a software engineer to further your learning.}
+I wanted to get more familiar to parsing large amounts of data. I have done a lot of projects revolving around APIS recently, and wanted to practice more on CSVs. 
+By doing this project I was able to practice handling large amounts of data from multiple sources and making them work together. It also gave me an opportunity to learn how 
+structure slightly more complex python files that require more classes and directories to stay organized. This was actually my first time uses classes in pythons, so I was
+interested to see how it differs from languages like c# and c++.
 
-{Provide a description of the data set that you are analyzing.  Include the link of where you obtained the data.}
+Here are the links to my data sources:
 
-{Describe your purpose for writing this software to analyze the data.}
+[Sports.Io API](https://sportsdata.io/developers/api-documentation/nba)
 
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the data set, the questions and answers, the code running and a walkthrough of the code.}
+[Rapid API: api-nba](https://rapidapi.com/api-sports/api/api-nba/)
 
-[Software Demo Video](http://youtube.link.goes.here)
+[CSV Files](https://www.kaggle.com/datasets/nathanlauga/nba-games?resource=download)
+
+<br/>
+
+## Software Demo
+[Demo Link](http://youtube.link.goes.here)
 
 # Data Analysis Results
 
-{List the questions and the answers you found by doing this analysis.}
+### What were the best scoring teams in the in a given year? 
+- The top 5 teams were the Golden State Warriors, Cleveland Cavaliers, Boston Celtics, Houston Rockets, and Washington Wizards<br/>
+
+### What are the current NBA rankings?
+- Top 3 in East: Boston Celtics, Cleveland Cavaliers, Milwaukee Bucks
+- Top 3 in West: Minnesota Timberwolves, Denver Nuggets, Oklahoma City Thunder <br/>
+
+### How has scoring changed over the last 20 years? 
+- In 2003 the league average was just over 90 PPG. In 2022 that was up to almost 114 PPG. So in 20 years the league scores 24 more PPG on average <br/>
+
+### Has the average NBA player gotten better at shooting 3s over time?
+- Somewhat, but not enough to account for the 24 more PPG. In 2003, the average NBA player shot about 34% from 3, and in 2022 it was up to almost 36%<br/>
 
 # Development Environment
-- imported: tabulate
-- pip install pandas matplotlib seaborn
-- mpld3
-{Describe the tools that you used to develop the software}
+- IDE: PyCharm <br/>
+- Language: Python <br/>
 
-{Describe the programming language that you used and any libraries.}
+### Library list:
+* Pandas
+* Requests
+* Tabulate
+* Matplotlib
+
+
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Basketball Reference](https://www.basketball-reference.com/teams/GSW/2016_games.html)
+* [MatPlotLib](https://matplotlib.org/stable/)
+* [Pandas Youtube Tutorial Series](https://www.youtube.com/watch?v=ZyhVh-qRZPA&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&ab_channel=CoreySchafer)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
-
-
-
-Finished things:
-
-Requests, formats and displays the current NBA Standings
-nba_standings = NBA_api.format_nba_standings(NBA_api.make_request(NBA_STANDINGS_ENDPOINT))
-NBA_api.display_nba_standings(nba_standings)
-
-
-Create instance of CSVReader, read and print data
-csv_reader = CSVReader(NBA_SALARIES_CSV_PATH)
-csv_reader.read_csv()
-data = csv_reader.get_data()
-for x in data:
-    print(x)
-
-
- # Modifying data (for example, adding a new game)
-    new_game = {"Date": "2024-02-10", "TeamA": "Team1", "TeamB": "Team2", "Result": "Team1 Wins"}
-    games.append(new_game)
-
-    # Writing back to CSV
-    csv_reader.write_csv(NBA_GAMES_CSV_PATH, games)
-
-
-  Create instances of each API league-specific object
-    NBA_api = NBA_API(NBA_API_KEY, BASE_URL)
-    NFL_api = NFL_API(NFL_API_KEY, BASE_URL)
-    CBB_api = CBB_API(CBB_API_KEY, BASE_URL)
-    NBA_api2 = NBA_API2(NBA_API2_KEY, BASE_URL_2)
-
-    player_data = NBA_api2.players(1, 2023)
-    team = NBA_api2.teams_by_id()
-
-    print("")
-
-    nba_standings = NBA_api.format_nba_standings(NBA_api.make_request(NBA_STANDINGS_ENDPOINT))
-    NBA_api.display_nba_standings(nba_standings)
-
-
-
-# Rank players by consistency
-    ranked_players = analyzer.rank_players_by_consistency()
+* Implement all the data I was able to including the CBB and NFL API, as well as the players, rankings, and game_details CSV. Learn how to get them to merge without breaking.
+* Create function to show trend of 3pt FG Attempt, and see if that accounts for scoring increase
+* Analyse fouls over time. See if the refs really are a larger factor today
+* Look at standard deviation of shooting percentage by player. Find the most consistent shooters in the league
+* Look for correlations between defensive/offensive statistics, see which one is a bigger factor in win/loss ration
+* Get charts to overlay properly. Like show the monthly and yearly trends at the same time
+* Get NBA names to work on chart preview
+* Implement better system for handling all the API endpoints
+* Figure out how to format data easier. Come up with a one size fits all method for each API?
